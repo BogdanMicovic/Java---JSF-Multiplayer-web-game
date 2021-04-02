@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Registracija</title>
+         <h:outputStylesheet library="css" name="dizajn.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <div>
+        <h:form style="align-items: center">
+            
+            <h:panelGrid columns="2" style="align-items: center">
+               <p:outputLabel value="Korisnicko ime:" for="Korime"> </p:outputLabel>
+               <p:inputText id="Korime" required="true" value="#{registerController.korime}" requiredMessage="Morate uneti korisnicko ime"></p:inputText>
+                <p:outputLabel value="Ime:" for="Ime"> </p:outputLabel>
+                <p:inputText id="Ime" required="true" value="#{registerController.ime}" requiredMessage="Morate uneti ime"></p:inputText>
+                <p:outputLabel value="Prezime:" for="Prezime"> </p:outputLabel>
+                <p:inputText id="Prezime" required="true" value="#{registerController.prezime}" requiredMessage="Morate uneti prezime"></p:inputText>
+                <p:outputLabel value="E-mail:" for="Email"> </p:outputLabel>
+                <p:inputText id="Email" required="true" requiredMessage="Morate uneti e-mail" validatorMessage="E-mail nije u dobrom fomatu" value="#{registerController.email}">
+                    <f:validateRegex pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$"></f:validateRegex>
+                </p:inputText>
+                
+                <p:outputLabel value="Lozinka:" for="Lozinka"></p:outputLabel>
+                <p:password id="Lozinka" required="true"  value="#{registerController.lozinka}" requiredMessage="Morate uneti lozinku" validatorMessage="Password nije u dobrom formatu" >
+                   <f:validateRegex pattern="^((?=(([a-z].*[A-Z])|([A-Z].*)))(?=(([a-z].*[a-z].*[a-z])|([A-Z].*[a-z].*[a-z].*[a-z].*)))(?=.*[0-9])(?=.*\W)[a-zA-Z].{7,11}$)"></f:validateRegex>
+                </p:password>
+                <p:outputLabel value="Potvrda lozinke:" for="Potvrda">
+          
+                </p:outputLabel>
+                <p:password id="Potvrda" required="true" value="#{registerController.potvrda}" requiredMessage="Morate potvditi lozinku"></p:password>
+                <p:outputLabel value="Pol:" for="Pol"></p:outputLabel>
+                <p:selectOneMenu id="Pol" required="true" value="#{registerController.pol}" requiredMessage="Morate uneti pol">
+                    <f:selectItem itemLabel="Muski" itemValue="Muski"></f:selectItem>
+                     <f:selectItem itemLabel="Zenski" itemValue="Zenski"></f:selectItem>
+                </p:selectOneMenu>
+                <p:outputLabel value="JMBG:" for="JMBG"> </p:outputLabel>
+                <p:inputText id="JMBG" required="true" value="#{registerController.JMBG}" requiredMessage="Morate uneti  JMBG" validatorMessage="JMBG nije u dobrom formatu">
+                <f:validateRegex pattern="^((0[1-9])|([1-2][0-9])|(3[0-1]))((0[1-9])|(1[0-2]))[0-9]{9}$">
+                </f:validateRegex>
+                </p:inputText>
+                <p:outputLabel value="Pitanje za ponistavanje lozinke:" for="Pitanje"> </p:outputLabel>
+                <p:inputText id="Pitanje" required="true" value="#{registerController.pitanje}" requiredMessage="Morate uneti pitanje za vracanje lozinke"></p:inputText>
+                <p:outputLabel value="Odgovor na prethodno pitanje:" for="Odgovor"> </p:outputLabel>
+                <p:inputText id="Odgovor" required="true" value="#{registerController.odgovor}" requiredMessage="Morate uneti odgovor za vracanje lozinke"></p:inputText>
+                <p:outputLabel value="Zanimanje:" for="Zanimanje"> </p:outputLabel>
+                <p:inputText id="Zanimanje" required="true" value="#{registerController.zanimanje}" requiredMessage="Morate uneti zanimanje"></p:inputText>
+                
+                <h:commandButton value="Register" action="#{registerController.register()}"></h:commandButton>
+           </h:panelGrid>
+           <p:messages autoUpdate="true" id="message" ></p:messages>
+        </h:form>
+            </div>
+    </h:body>
+</html>

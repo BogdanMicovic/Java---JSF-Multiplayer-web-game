@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Login</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h1>Login stranica:</h1>
+    </h:head>
+    <h:body>
+        <div>
+             <h:form>
+          <p:outputLabel value="Korisnicko Ime:" for="Ime"> </p:outputLabel>
+          <p:inputText id="Ime" required="true" value="#{loginController.korime}"></p:inputText>
+          <p:outputLabel value="Lozinka:" for="Lozinka"> </p:outputLabel>
+          <p:inputText id="Lozinka" required="true" value="#{loginController.lozinka}"></p:inputText>
+          <h:commandButton value="Login" action="#{loginController.login()}"></h:commandButton>
+           <p:link outcome="zaboravljena_lozinka" value="Zaboravili ste lozinku?"></p:link>
+          </h:form>
+        </div>
+        <br></br><br></br><br></br>
+        <div>
+            <h:form>
+                <p:commandButton value="Uloguj se kao gost" action="gost"></p:commandButton>
+            </h:form>
+        </div>
+       
+        
+    </h:body>
+</html>

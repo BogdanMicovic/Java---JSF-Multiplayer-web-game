@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Pehar</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <div>
+            <h:form id="forma_pitanja">
+                <p:outputLabel>Trenutni ostvareni poeni: #{peharController.trenutni_ostvareni_poeni}</p:outputLabel>
+                <br></br><br></br><br></br>
+                <p:outputLabel id="vreme">Preostalo vreme: #{peharController.preostalo_vreme}</p:outputLabel>
+                <p:poll interval="2" listener="#{peharController.decrement()}" update="forma_pitanja"></p:poll>
+                <table>
+                    <tr>
+                        <td>   <p:outputLabel for="pitanje1-9" id="pevo_pitanje">Prvo pitanje: #{peharController.pitanja[1]}</p:outputLabel> </td><td></td> <td></td> 
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor1}" id="pitanje1-9" size="1" maxlength="1" value="#{peharController.odgovor1[0]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor1}" size="1" maxlength="1" value="#{peharController.odgovor1[1]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor1}" size="1" maxlength="1" value="#{peharController.odgovor1[2]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor1}" size="1" maxlength="1" value="#{peharController.odgovor1[3]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor1}" size="1" maxlength="1" value="#{peharController.odgovor1[4]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor1}" size="1" maxlength="1" value="#{peharController.odgovor1[5]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor1}" size="1" maxlength="1" value="#{peharController.odgovor1[6]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor1}" size="1" maxlength="1" value="#{peharController.odgovor1[7]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor1}" size="1" maxlength="1" value="#{peharController.odgovor1[8]}"></p:inputText> </td>
+                        <td><p:commandButton value="Potvrdi" action="#{peharController.potvrdi(1,1)}" update="forma_pitanja"></p:commandButton></td> 
+                        <td><p:commandButton value="Preskoci" action="#{peharController.preskoci(1,2)}" update="forma_pitanja"></p:commandButton></td>                                                    
+                   
+                    </tr>
+                    
+                    <tr>
+                        
+                    <td>   <p:outputLabel for="pitanje2-8" id="drugo_pitanje">Drugo pitanje: #{peharController.pitanja[2]}</p:outputLabel> </td><td></td> <td></td> 
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor2}" id="pitanje2-8" size="1" maxlength="1" value="#{peharController.odgovor2[0]}"> </p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor2}" size="1" maxlength="1" value="#{peharController.odgovor2[1]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor2}" size="1" maxlength="1" value="#{peharController.odgovor2[2]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor2}" size="1" maxlength="1" value="#{peharController.odgovor2[3]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor2}" size="1" maxlength="1" value="#{peharController.odgovor2[4]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor2}" size="1" maxlength="1" value="#{peharController.odgovor2[5]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor2}" size="1" maxlength="1" value="#{peharController.odgovor2[6]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor2}" size="1" maxlength="1" value="#{peharController.odgovor2[7]}"></p:inputText> </td>
+                        <td></td>
+                        <td><p:commandButton value="Potvrdi" action="#{peharController.potvrdi(2,1)}" update="forma_pitanja"></p:commandButton></td> 
+                        <td><p:commandButton value="Preskoci" action="#{peharController.preskoci(2,2)}" update="forma_pitanja"></p:commandButton></td>                                                    
+                        
+                    </tr>
+                    
+                    <tr>
+                        <td> <p:outputLabel for="pitanje3-7" id="trece_pitanje">Trece pitanje: #{peharController.pitanja[3]}</p:outputLabel> </td><td></td> <td></td> 
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor3}" id="pitanje3-7" size="1" maxlength="1" value="#{peharController.odgovor3[0]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor3}" size="1" maxlength="1" value="#{peharController.odgovor3[1]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor3}" size="1" maxlength="1" value="#{peharController.odgovor3[2]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor3}" size="1" maxlength="1" value="#{peharController.odgovor3[3]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor3}" size="1" maxlength="1" value="#{peharController.odgovor3[4]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor3}" size="1" maxlength="1" value="#{peharController.odgovor3[5]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor3}" size="1" maxlength="1" value="#{peharController.odgovor3[6]}"></p:inputText> </td>
+                        <td></td><td></td>
+                        <td><p:commandButton value="Potvrdi" action="#{peharController.potvrdi(3,1)}" update="forma_pitanja"></p:commandButton></td> 
+                        <td><p:commandButton value="Preskoci" action="#{peharController.preskoci(3,2)}" update="forma_pitanja"></p:commandButton></td>                                                    
+                        
+                    </tr>
+                    
+                    <tr>
+                        <td>    <p:outputLabel for="pitanje4-6" id="cetvrto_pitanje">Cetvrto pitanje: #{peharController.pitanja[4]}</p:outputLabel> </td><td></td> <td></td> 
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor4}" id="pitanje4-6" size="1" maxlength="1" value="#{peharController.odgovor4[0]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor4}" size="1" maxlength="1" value="#{peharController.odgovor4[1]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor4}" size="1" maxlength="1" value="#{peharController.odgovor4[2]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor4}" size="1" maxlength="1" value="#{peharController.odgovor4[3]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor4}" size="1" maxlength="1" value="#{peharController.odgovor4[4]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor4}" size="1" maxlength="1" value="#{peharController.odgovor4[5]}"></p:inputText> </td>
+                        <td></td><td></td><td></td>
+                        <td><p:commandButton value="Potvrdi" action="#{peharController.potvrdi(4,1)}" update="forma_pitanja"></p:commandButton></td> 
+                        <td><p:commandButton value="Preskoci" action="#{peharController.preskoci(4,2)}" update="forma_pitanja"></p:commandButton></td>                                                    
+                        
+                    </tr>
+                    
+                    <tr>
+                        <td>  <p:outputLabel for="pitanje5-5" id="peto_pitanje">Peto pitanje: #{peharController.pitanja[5]}</p:outputLabel> </td><td></td> <td></td> 
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor5}" id="pitanje5-5" size="1" maxlength="1" value="#{peharController.odgovor5[0]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor5}" size="1" maxlength="1" value="#{peharController.odgovor5[1]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor5}" size="1" maxlength="1" value="#{peharController.odgovor5[2]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor5}" size="1" maxlength="1" value="#{peharController.odgovor5[3]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor5}" size="1" maxlength="1" value="#{peharController.odgovor5[4]}"></p:inputText> </td>
+                        <td></td><td></td><td></td><td></td>
+                        <td><p:commandButton value="Potvrdi" action="#{peharController.potvrdi(5,1)}" update="forma_pitanja"></p:commandButton></td> 
+                        <td><p:commandButton value="Preskoci" action="#{peharController.preskoci(5,2)}" update="forma_pitanja"></p:commandButton></td>                                                    
+                        
+                    </tr>
+                    
+                    <tr>
+                        <td>  <p:outputLabel for="pitanje6-4" id="sesto_pitanje">Sesto pitanje: #{peharController.pitanja[6]}</p:outputLabel> </td><td></td> <td></td> 
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor6}" id="pitanje6-4" size="1" maxlength="1" value="#{peharController.odgovor6[0]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor6}" size="1" maxlength="1" value="#{peharController.odgovor6[1]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor6}" size="1" maxlength="1" value="#{peharController.odgovor6[2]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor6}" size="1" maxlength="1" value="#{peharController.odgovor6[3]}"></p:inputText> </td>
+                        <td></td><td></td><td></td><td></td><td></td>
+                        <td><p:commandButton value="Potvrdi" action="#{peharController.potvrdi(6,1)}" update="forma_pitanja"></p:commandButton></td> 
+                        <td><p:commandButton value="Preskoci" action="#{peharController.preskoci(6,2)}" update="forma_pitanja"></p:commandButton></td>                                                    
+                        
+                    </tr>
+                    
+                    <tr>
+                        <td>  <p:outputLabel for="pitanje7-3" id="sedmo_pitanje">Sedmo pitanje: #{peharController.pitanja[7]}</p:outputLabel> </td><td></td> <td></td> 
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor7}" id="pitanje7-3" size="1" maxlength="1" value="#{peharController.odgovor7[0]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor7}" size="1" maxlength="1" value="#{peharController.odgovor7[1]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor7}" size="1" maxlength="1" value="#{peharController.odgovor7[2]}"></p:inputText> </td>
+                        <td></td><td></td><td></td><td></td><td></td><td></td>
+                        <td><p:commandButton value="Potvrdi" action="#{peharController.potvrdi(7,1)}" update="forma_pitanja"></p:commandButton></td> 
+                        <td><p:commandButton value="Preskoci" action="#{peharController.preskoci(7,2)}" update="forma_pitanja"></p:commandButton></td>                                                    
+                           
+                    </tr>
+                    <tr>
+                        <td>  <p:outputLabel for="pitanje8-4" id="osmo_pitanje">Osmo pitanje: #{peharController.pitanja[8]}</p:outputLabel> </td><td></td> <td></td> 
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor8}" id="pitanje8-4" size="1" maxlength="1" value="#{peharController.odgovor8[0]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor8}" size="1" maxlength="1" value="#{peharController.odgovor8[1]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor8}" size="1" maxlength="1" value="#{peharController.odgovor8[2]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor8}" size="1" maxlength="1" value="#{peharController.odgovor8[3]}"></p:inputText> </td>
+                        <td></td><td></td><td></td><td></td><td></td>
+                        <td><p:commandButton value="Potvrdi" action="#{peharController.potvrdi(8,1)}" update="forma_pitanja"></p:commandButton></td> 
+                        <td><p:commandButton value="Preskoci" action="#{peharController.preskoci(8,2)}" update="forma_pitanja"></p:commandButton></td>                                                    
+                        
+                    </tr>
+                    <tr>
+                        <td>  <p:outputLabel for="pitanje9-5" id="deveto_pitanje">Deveto pitanje: #{peharController.pitanja[9]}</p:outputLabel> </td><td></td> <td></td> 
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor9}" id="pitanje9-5" size="1" maxlength="1" value="#{peharController.odgovor9[0]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor9}" size="1" maxlength="1" value="#{peharController.odgovor9[1]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor9}" size="1" maxlength="1" value="#{peharController.odgovor9[2]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor9}" size="1" maxlength="1" value="#{peharController.odgovor9[3]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor9}" size="1" maxlength="1" value="#{peharController.odgovor9[4]}"></p:inputText> </td>
+                        <td></td><td></td><td></td><td></td>
+                        <td><p:commandButton value="Potvrdi" action="#{peharController.potvrdi(9,1)}" update="forma_pitanja"></p:commandButton></td> 
+                        <td><p:commandButton value="Preskoci" action="#{peharController.preskoci(9,2)}" update="forma_pitanja"></p:commandButton></td>                                                    
+                        
+                    </tr>
+                    <tr>
+                         <td>    <p:outputLabel for="pitanje10-6" id="deseto_pitanje">Deseto pitanje: #{peharController.pitanja[10]}</p:outputLabel> </td><td></td> <td></td> 
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor10}" id="pitanje10-6" size="1" maxlength="1" value="#{peharController.odgovor10[0]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor10}" size="1" maxlength="1" value="#{peharController.odgovor10[1]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor10}" size="1" maxlength="1" value="#{peharController.odgovor10[2]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor10}" size="1" maxlength="1" value="#{peharController.odgovor10[3]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor10}" size="1" maxlength="1" value="#{peharController.odgovor10[4]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor10}" size="1" maxlength="1" value="#{peharController.odgovor10[5]}"></p:inputText> </td>
+                        <td></td><td></td><td></td>
+                        <td><p:commandButton value="Potvrdi" action="#{peharController.potvrdi(10,1)}" update="forma_pitanja"></p:commandButton></td> 
+                        <td><p:commandButton value="Preskoci" action="#{peharController.preskoci(10,2)}" update="forma_pitanja"></p:commandButton></td>                                                    
+                        
+                    </tr>
+                    <tr>
+                        <td> <p:outputLabel for="pitanje11-7" id="jedanaesto_pitanje">Jedanaesto pitanje: #{peharController.pitanja[11]}</p:outputLabel> </td><td></td> <td></td> 
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor11}" id="pitanje11-7" size="1" maxlength="1" value="#{peharController.odgovor11[0]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor11}" size="1" maxlength="1" value="#{peharController.odgovor11[1]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor11}" size="1" maxlength="1" value="#{peharController.odgovor11[2]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor11}" size="1" maxlength="1" value="#{peharController.odgovor11[3]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor11}" size="1" maxlength="1" value="#{peharController.odgovor11[4]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor11}" size="1" maxlength="1" value="#{peharController.odgovor11[5]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor11}" size="1" maxlength="1" value="#{peharController.odgovor11[6]}"></p:inputText> </td>
+                        <td></td><td></td>
+                        <td><p:commandButton value="Potvrdi" action="#{peharController.potvrdi(11,1)}" update="forma_pitanja"></p:commandButton></td> 
+                        <td><p:commandButton value="Preskoci" action="#{peharController.preskoci(11,2)}" update="forma_pitanja"></p:commandButton></td>                                                    
+                          
+                    </tr>
+                    <tr>
+                        <td>   <p:outputLabel for="pitanje12-8" id="dvanaesto_pitanje">Dvanaesto pitanje: #{peharController.pitanja[12]}</p:outputLabel> </td><td></td> <td></td> 
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor12}" id="pitanje12-8" size="1" maxlength="1" value="#{peharController.odgovor12[0]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor12}" size="1" maxlength="1" value="#{peharController.odgovor12[1]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor12}" size="1" maxlength="1" value="#{peharController.odgovor12[2]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor12}" size="1" maxlength="1" value="#{peharController.odgovor12[3]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor12}" size="1" maxlength="1" value="#{peharController.odgovor12[4]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor12}" size="1" maxlength="1" value="#{peharController.odgovor12[5]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor12}" size="1" maxlength="1" value="#{peharController.odgovor12[6]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor12}" size="1" maxlength="1" value="#{peharController.odgovor12[7]}"></p:inputText> </td>
+                        <td></td>
+                        <td><p:commandButton value="Potvrdi" action="#{peharController.potvrdi(12,1)}" update="forma_pitanja"></p:commandButton></td> 
+                        <td><p:commandButton value="Preskoci" action="#{peharController.preskoci(12,2)}" update="forma_pitanja"></p:commandButton></td>                                                    
+                        
+                    </tr>
+                    <tr>
+                        <td>   <p:outputLabel for="pitanje13-9" id="trinaesto_pitanje">Trinaesto pitanje: #{peharController.pitanja[13]}</p:outputLabel> </td><td></td> <td></td> 
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor13}" id="pitanje13-9" size="1" maxlength="1" value="#{peharController.odgovor13[0]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor13}" size="1" maxlength="1" value="#{peharController.odgovor13[1]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor13}" size="1" maxlength="1" value="#{peharController.odgovor13[2]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor13}" size="1" maxlength="1" value="#{peharController.odgovor13[3]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor13}" size="1" maxlength="1" value="#{peharController.odgovor13[4]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor13}" size="1" maxlength="1" value="#{peharController.odgovor13[5]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor13}" size="1" maxlength="1" value="#{peharController.odgovor13[6]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor13}" size="1" maxlength="1" value="#{peharController.odgovor13[7]}"></p:inputText> </td>
+                        <td> <p:inputText disabled="#{peharController.onemoguci_odgovor13}" size="1" maxlength="1" value="#{peharController.odgovor13[8]}"></p:inputText> </td>
+                        <td><p:commandButton value="Potvrdi" action="#{peharController.potvrdi(13,1)}" update="forma_pitanja"></p:commandButton></td> 
+                        <td><p:commandButton value="Preskoci" action="#{peharController.preskoci(13,2)}" update="forma_pitanja"></p:commandButton></td>                                                    
+                    
+                    </tr>
+                </table>
+                <br></br> <br></br> <br></br>
+                <p:commandButton value="Pocni" action="#{peharController.pocni()}" update="forma_pitanja"></p:commandButton>
+            </h:form>
+        </div>
+    </h:body>
+</html>

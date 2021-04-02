@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 6, 2019 11:23:49 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="util.Korisnici" table="korisnici" catalog="jsf_projekat" optimistic-lock="version">
+        <id name="korime" type="string">
+            <column name="korime" length="60" />
+            <generator class="assigned" />
+        </id>
+        <property name="jmbg" type="long">
+            <column name="jmbg" not-null="true" />
+        </property>
+        <property name="lozinka" type="string">
+            <column name="lozinka" length="60" not-null="true" />
+        </property>
+        <property name="ime" type="string">
+            <column name="ime" length="60" not-null="true" />
+        </property>
+        <property name="prezime" type="string">
+            <column name="prezime" length="60" not-null="true" />
+        </property>
+        <property name="tip" type="byte">
+            <column name="tip" not-null="true">
+                <comment>1-korisnik, 2-administrator, 3-supervizor, 4-gost</comment>
+            </column>
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="60" not-null="true" />
+        </property>
+        <property name="zanimanje" type="string">
+            <column name="zanimanje" length="60" not-null="true" />
+        </property>
+        <property name="pol" type="string">
+            <column name="pol" length="60" not-null="true" />
+        </property>
+        <property name="pitanje" type="string">
+            <column name="pitanje" length="60" not-null="true" />
+        </property>
+        <property name="odgovor" type="string">
+            <column name="odgovor" length="60" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

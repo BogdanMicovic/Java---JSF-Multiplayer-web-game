@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Supervizor</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <div>
+            <h:form id="anagrami">
+                <p:messages id="messages" showDetail="true" closable="true">
+        
+    </p:messages>
+                <p:outputLabel>Unesite anagrame: </p:outputLabel>
+                <br></br><br></br>
+                <table>
+                    <tr>
+                        <td><p:outputLabel for="zagonetka">Unesite zagonetku: </p:outputLabel></td> <td><p:inputText id="zagonetka" value="#{Supervizor.naziv_anagrama}"></p:inputText></td>
+                    </tr>
+                    <tr>
+                        <td><p:outputLabel for="resenje">Unesite resenje: </p:outputLabel></td> <td><p:inputText id="resenje" value="#{Supervizor.resenje_anagrama}"></p:inputText></td>
+
+                    </tr>
+                </table>
+                <br></br>
+                <p:commandButton value="Potvrdi" action="#{Supervizor.unesi_anagram()}" update="anagrami"></p:commandButton>
+            </h:form>
+             <br></br><br></br>
+        </div>
+        <div>
+            <h:form id="Geografija">
+                <table>
+                    <tr>
+                        <td><p:outputLabel for="pojam">Unesite pojam:</p:outputLabel></td>
+                        <td><p:inputText id="pojam" value="#{Supervizor.pojam}"></p:inputText></td>
+                    </tr>
+                    <tr>
+                        <td><p:outputLabel for="kategorija">Odaberite kategoriju:</p:outputLabel></td>
+                        <td><p:selectOneMenu id="kategorija" value="#{Supervizor.kategorija}">
+                                <f:selectItem itemLabel="Drzava" itemValue="Drzava"></f:selectItem>
+                                 <f:selectItem itemLabel="Grad" itemValue="Grad"></f:selectItem>
+                                  <f:selectItem itemLabel="Planina" itemValue="Planina"></f:selectItem>
+                                   <f:selectItem itemLabel="Reka" itemValue="Reka"></f:selectItem>
+                                    <f:selectItem itemLabel="Jezero" itemValue="Jezero"></f:selectItem>
+                                     <f:selectItem itemLabel="Biljka" itemValue="Biljka"></f:selectItem>
+                                      <f:selectItem itemLabel="Zivotinja" itemValue="Zivotinja"></f:selectItem>
+                                       <f:selectItem itemLabel="Grupa" itemValue="Grupa"></f:selectItem>
+                            </p:selectOneMenu></td>
+                   </tr>
+                </table>
+                 <br></br><br></br>
+                 <p:commandButton value="Potvrdi" action="#{Supervizor.unesi_pojam()}"></p:commandButton>
+            </h:form>
+        </div>
+        <br></br><br></br>
+        <div>
+            <h:form id="forma_pehar">
+                <table>
+                    <tr>
+                        <td><p:outputLabel>Unesite prvo pitanje:</p:outputLabel></td><td><p:inputText value="#{Supervizor.pitanja[0]}"></p:inputText> </td>
+                        <td>  <p:outputLabel>Unesite prvi odgovor:</p:outputLabel></td> <td><p:inputText value="#{Supervizor.odgovori[0]}"></p:inputText></td>
+                        
+                    </tr>
+                     <tr>
+                        <td><p:outputLabel>Unesite drugo pitanje:</p:outputLabel></td><td><p:inputText value="#{Supervizor.pitanja[1]}"></p:inputText> </td>
+                        <td>  <p:outputLabel>Unesite drugi odgovor:</p:outputLabel></td> <td><p:inputText value="#{Supervizor.odgovori[1]}"></p:inputText></td>
+                        
+                    </tr>
+                     <tr>
+                        <td><p:outputLabel>Unesite trece pitanje:</p:outputLabel></td><td><p:inputText value="#{Supervizor.pitanja[2]}"></p:inputText> </td>
+                        <td>  <p:outputLabel>Unesite treci odgovor:</p:outputLabel></td> <td><p:inputText value="#{Supervizor.odgovori[2]}"></p:inputText></td>
+                        
+                    </tr>
+                     <tr>
+                        <td><p:outputLabel>Unesite cetvrto pitanje:</p:outputLabel></td><td><p:inputText value="#{Supervizor.pitanja[3]}"></p:inputText> </td>
+                        <td>  <p:outputLabel>Unesite cetvrti odgovor:</p:outputLabel></td> <td><p:inputText value="#{Supervizor.odgovori[3]}"></p:inputText></td>
+                        
+                    </tr>
+                     <tr>
+                        <td><p:outputLabel>Unesite peto pitanje:</p:outputLabel></td><td><p:inputText value="#{Supervizor.pitanja[4]}"></p:inputText> </td>
+                        <td>  <p:outputLabel>Unesite peti odgovor:</p:outputLabel></td> <td><p:inputText value="#{Supervizor.odgovori[4]}"></p:inputText></td>
+                        
+                    </tr>
+                     <tr>
+                        <td><p:outputLabel>Unesite sesto pitanje:</p:outputLabel></td><td><p:inputText value="#{Supervizor.pitanja[5]}"></p:inputText> </td>
+                        <td>  <p:outputLabel>Unesite sestii odgovor:</p:outputLabel></td> <td><p:inputText value="#{Supervizor.odgovori[5]}"></p:inputText></td>
+                        
+                    </tr>
+                     <tr>
+                        <td><p:outputLabel>Unesite sedmo pitanje:</p:outputLabel></td><td><p:inputText value="#{Supervizor.pitanja[6]}"></p:inputText> </td>
+                        <td>  <p:outputLabel>Unesite sedmi odgovor:</p:outputLabel></td> <td><p:inputText value="#{Supervizor.odgovori[6]}"></p:inputText></td>
+                        
+                    </tr>
+                     <tr>
+                        <td><p:outputLabel>Unesite osmo pitanje:</p:outputLabel></td><td><p:inputText value="#{Supervizor.pitanja[7]}"></p:inputText> </td>
+                        <td>  <p:outputLabel>Unesite osmi odgovor:</p:outputLabel></td> <td><p:inputText value="#{Supervizor.odgovori[7]}"></p:inputText></td>
+                        
+                    </tr>
+                     <tr>
+                        <td><p:outputLabel>Unesite deveto pitanje:</p:outputLabel></td><td><p:inputText value="#{Supervizor.pitanja[8]}"></p:inputText> </td>
+                        <td>  <p:outputLabel>Unesite deveti odgovor:</p:outputLabel></td> <td><p:inputText value="#{Supervizor.odgovori[8]}"></p:inputText></td>
+                        
+                    </tr>
+                     <tr>
+                        <td><p:outputLabel>Unesite deseto pitanje:</p:outputLabel></td><td><p:inputText value="#{Supervizor.pitanja[9]}"></p:inputText> </td>
+                        <td>  <p:outputLabel>Unesite deseti odgovor:</p:outputLabel></td> <td><p:inputText value="#{Supervizor.odgovori[9]}"></p:inputText></td>
+                        
+                    </tr>
+                     <tr>
+                        <td><p:outputLabel>Unesite jedanaesto pitanje:</p:outputLabel></td><td><p:inputText value="#{Supervizor.pitanja[10]}"></p:inputText> </td>
+                        <td>  <p:outputLabel>Unesite jedanaesti odgovor:</p:outputLabel></td> <td><p:inputText value="#{Supervizor.odgovori[10]}"></p:inputText></td>
+                        
+                    </tr>
+                     <tr>
+                        <td><p:outputLabel>Unesite dvanaesto pitanje:</p:outputLabel></td><td><p:inputText value="#{Supervizor.pitanja[11]}"></p:inputText> </td>
+                        <td>  <p:outputLabel>Unesite dvanaesti odgovor:</p:outputLabel></td> <td><p:inputText value="#{Supervizor.odgovori[11]}"></p:inputText></td>
+                        
+                    </tr>
+                     <tr>
+                        <td><p:outputLabel>Unesite trinaesto pitanje:</p:outputLabel></td><td><p:inputText value="#{Supervizor.pitanja[12]}"></p:inputText> </td>
+                        <td>  <p:outputLabel>Unesite trinaesti odgovor:</p:outputLabel></td> <td><p:inputText value="#{Supervizor.odgovori[12]}"></p:inputText></td>
+                        
+                    </tr>
+                </table>
+                <br></br><br></br>
+                <p:commandButton value="Potvrdi" action="#{Supervizor.unesi_pehar()}"></p:commandButton>
+            </h:form>
+        </div>
+        <br></br><br></br>
+        <div>
+            <p:dataTable value="#{Supervizor.geografija}" var="g">
+                <p:column headerText="idPartije">
+                    <h:outputText value="#{g.idPartije}"></h:outputText>
+                </p:column>
+                <p:column headerText="Kategorija">
+                    <h:outputText value="#{g.kategorija}"></h:outputText>
+                </p:column>
+                <p:column headerText="Odgovor">
+                    <h:outputText value="#{g.odgovor}"></h:outputText>
+                </p:column>
+                <p:column headerText="Potvrdi">
+                    <p:commandButton value="Priznaj" action="#{Supervizor.potvrdi_geografija(g.idPartije, g.kategorija, g.odgovor)}"></p:commandButton>
+                </p:column>
+                <p:column headerText="Odbij">
+                    <p:commandButton value="Odbij" action="#{Supervizor.odbij_geografija(g.idPartije, g.kategorija)}"></p:commandButton>
+
+                </p:column>
+            </p:dataTable>
+        </div>
+    </h:body>
+</html>

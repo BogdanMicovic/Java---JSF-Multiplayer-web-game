@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Promena lozinke</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h1>Unesite podatke:</h1>
+    </h:head>
+    <h:body>
+        <h:form>
+             <p:outputLabel value="Korisnicko Ime:" for="Ime"> </p:outputLabel>
+             <p:inputText id="Ime" required="true" value="#{promenaLozinke.korime}"></p:inputText>
+             <p:outputLabel value="Stara lozinka:" for="Lozinka"> </p:outputLabel>
+             <p:inputText id="Lozinka" required="true" value="#{promenaLozinke.stara_lozinka}"></p:inputText>
+             <p:outputLabel value="Nova lozinka:" for="Nova"> </p:outputLabel>
+             <p:inputText id="Nova" required="true" value="#{promenaLozinke.nova_lozinka}"></p:inputText>
+             <p:outputLabel value="Potvrda nove lozinke:" for="Potvrda"> </p:outputLabel>
+             <p:inputText id="Potvrda" required="true" value="#{promenaLozinke.nova_lozinka_potvrda}"></p:inputText>
+             <h:commandButton value="Potvrdi" action="#{promenaLozinke.promeni_lozinku()}"></h:commandButton>
+        </h:form>
+    </h:body>
+    <p:messages autoUpdate="true" id="msg"></p:messages>
+</html>

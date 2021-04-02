@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>5x5</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <h:form id="forma_pet_puta_pet">
+            <p:messages id="messages" showDetail="true" closable="true">
+        
+    </p:messages>
+            <p:outputLabel>Osvojeni poeni: #{petPutaPetController.ostvareni_poeni}</p:outputLabel>
+              <br></br> 
+              <p:outputLabel>Preostali broj pokusaja: #{petPutaPetController.preostalo_pokusaja}</p:outputLabel>
+            <br></br> <br></br> <br></br>
+        <table>
+            <tr>
+                <td> <p:button  disabled="0" value="#{petPutaPetController.matrica_koja_se_prikazuje[0][0]}" style="width:40px;height:40px"></p:button>  </td>
+                <td> <p:button  disabled="0" value="#{petPutaPetController.matrica_koja_se_prikazuje[0][1]}" style="width:40px;height:40px"></p:button>  </td>
+                <td> <p:button  disabled="0" value="#{petPutaPetController.matrica_koja_se_prikazuje[0][2]}" style="width:40px;height:40px"></p:button>  </td>
+                <td> <p:button  disabled="0" value="#{petPutaPetController.matrica_koja_se_prikazuje[0][3]}" style="width:40px;height:40px"></p:button>  </td>
+                <td> <p:button  disabled="0" value="#{petPutaPetController.matrica_koja_se_prikazuje[0][4]}" style="width:40px;height:40px"></p:button>  </td>
+                
+            </tr>
+            <tr>
+                <td> <p:button  disabled="0" value="#{petPutaPetController.matrica_koja_se_prikazuje[1][0]}" style="width:40px;height:40px"></p:button>  </td>
+                <td> <p:button  disabled="0" value="#{petPutaPetController.matrica_koja_se_prikazuje[1][1]}" style="width:40px;height:40px"></p:button>  </td>
+                <td> <p:button  disabled="0" value="#{petPutaPetController.matrica_koja_se_prikazuje[1][2]}" style="width:40px;height:40px"></p:button>  </td>
+                <td> <p:button  disabled="0" value="#{petPutaPetController.matrica_koja_se_prikazuje[1][3]}" style="width:40px;height:40px"></p:button>  </td>
+                <td> <p:button  disabled="0" value="#{petPutaPetController.matrica_koja_se_prikazuje[1][4]}" style="width:40px;height:40px"></p:button>  </td>
+                
+            </tr>
+            <tr>
+                <td> <p:button  disabled="0" value="#{petPutaPetController.matrica_koja_se_prikazuje[2][0]}" style="width:40px;height:40px"></p:button>  </td>
+                <td> <p:button  disabled="0" value="#{petPutaPetController.matrica_koja_se_prikazuje[2][1]}" style="width:40px;height:40px"></p:button>  </td>
+                <td> <p:button  disabled="0" value="#{petPutaPetController.matrica_koja_se_prikazuje[2][2]}" style="width:40px;height:40px"></p:button>  </td>
+                <td> <p:button  disabled="0" value="#{petPutaPetController.matrica_koja_se_prikazuje[2][3]}" style="width:40px;height:40px"></p:button>  </td>
+                <td> <p:button  disabled="0" value="#{petPutaPetController.matrica_koja_se_prikazuje[2][4]}" style="width:40px;height:40px"></p:button>  </td>
+                
+            </tr>
+            <tr>
+                <td> <p:button  disabled="0" value="#{petPutaPetController.matrica_koja_se_prikazuje[3][0]}" style="width:40px;height:40px"></p:button>  </td>
+                <td> <p:button  disabled="0" value="#{petPutaPetController.matrica_koja_se_prikazuje[3][1]}" style="width:40px;height:40px"></p:button>  </td>
+                <td> <p:button  disabled="0" value="#{petPutaPetController.matrica_koja_se_prikazuje[3][2]}" style="width:40px;height:40px"></p:button>  </td>
+                <td> <p:button  disabled="0" value="#{petPutaPetController.matrica_koja_se_prikazuje[3][3]}" style="width:40px;height:40px"></p:button>  </td>
+                <td> <p:button  disabled="0" value="#{petPutaPetController.matrica_koja_se_prikazuje[3][4]}" style="width:40px;height:40px"></p:button>  </td>
+                
+            </tr>
+            <tr>
+                <td> <p:button  disabled="0" value="#{petPutaPetController.matrica_koja_se_prikazuje[4][0]}" style="width:40px;height:40px"></p:button>  </td>
+                <td> <p:button  disabled="0" value="#{petPutaPetController.matrica_koja_se_prikazuje[4][1]}" style="width:40px;height:40px"></p:button>  </td>
+                <td> <p:button  disabled="0" value="#{petPutaPetController.matrica_koja_se_prikazuje[4][2]}" style="width:40px;height:40px"></p:button>  </td>
+                <td> <p:button  disabled="0" value="#{petPutaPetController.matrica_koja_se_prikazuje[4][3]}" style="width:40px;height:40px"></p:button>  </td>
+                <td> <p:button  disabled="0" value="#{petPutaPetController.matrica_koja_se_prikazuje[4][4]}" style="width:40px;height:40px"></p:button>  </td>
+                
+            </tr>
+        </table>
+            <br></br> <br></br> <br></br>
+            <h:outputLabel for="unos">Unesite slovo</h:outputLabel>
+            <h:inputText id="unos" value="#{petPutaPetController.uneto_slovo}" maxlength="1" size="1"></h:inputText>
+            <p:commandButton value="Potvrdi" id="potvrdi" action="#{petPutaPetController.potvrdi()}" update="forma_pet_puta_pet"></p:commandButton>
+            <br></br> <br></br> <br></br>
+            <p:outputLabel id="vreme1">Preostalo vreme: #{petPutaPetController.counter}</p:outputLabel>
+            <p:poll interval="1" update="vreme1" listener="#{petPutaPetController.decrement()}"></p:poll>
+            <br></br> <br></br><br></br>
+            <p:outputLabel>Uneta slova:</p:outputLabel>
+            <br></br>
+            <table>
+                <tr>
+                    <ui:repeat value="#{petPutaPetController.pokusaji}" var="p">
+                    <td>#{p}</td>
+                    </ui:repeat>
+                </tr>
+            </table>
+            
+        </h:form>
+    </h:body>
+</html>

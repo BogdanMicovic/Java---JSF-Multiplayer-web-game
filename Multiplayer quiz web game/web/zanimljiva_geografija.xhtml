@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Zanimljiva geografija</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <h3>Ostvareni poeni: #{zanimljivaGeografijaController.trenutni_ostvareni_poeni}</h3>
+        <p:messages id="messages" showDetail="true" closable="true">
+        
+    </p:messages>
+        <div>
+            <h:form id="formaGeografija1">
+                <table id="tabelaPojmova">
+                    <tr>
+                        <td> <p:outputLabel  for="drzava">Drzava: </p:outputLabel> </td> <td> <p:inputText id="drzava" value="#{zanimljivaGeografijaController.drzava}"></p:inputText> </td>                      
+                    </tr>
+                    <tr>
+                    <td> <p:outputLabel  for="grad">Grad: </p:outputLabel></td> <td> <p:inputText id="grad" value="#{zanimljivaGeografijaController.grad}"></p:inputText> </td>
+                    </tr>
+                    <tr>
+                        <td> <p:outputLabel  for="planina">Planina: </p:outputLabel> </td> <td> <p:inputText id="planina" value="#{zanimljivaGeografijaController.planina}"></p:inputText> </td>
+                    </tr>
+                    <tr>
+                  <td> <p:outputLabel  for="reka">Reka: </p:outputLabel></td> <td> <p:inputText id="reka" value="#{zanimljivaGeografijaController.reka}"></p:inputText> </td>
+                  <td></td><td></td><td></td><td></td>
+                  <td>
+                      <p:outputLabel id="Broj">Zadato slovo je: #{zanimljivaGeografijaController.zadato_slovo}</p:outputLabel>
+                  </td>
+                    </tr>
+                    <tr>
+                        <td> <p:outputLabel  for="jezero">Jezero: </p:outputLabel> </td> <td> <p:inputText id="jezero" value="#{zanimljivaGeografijaController.jezero}"></p:inputText> </td>                        
+
+                    </tr>
+                    <tr>
+                        <td> <p:outputLabel  for="zivotinja">Zivotinja: </p:outputLabel> </td> <td> <p:inputText id="zivotinja" value="#{zanimljivaGeografijaController.zivotinja}"></p:inputText> </td>                        
+                    </tr>
+                    <tr>
+                        <td> <p:outputLabel  for="biljka">Biljka: </p:outputLabel></td> <td> <p:inputText id="biljka" value="#{zanimljivaGeografijaController.biljka}"></p:inputText> </td> 
+                        
+                    </tr>
+                    <tr>
+                         <td> <p:outputLabel  for="grupa">Grupa: </p:outputLabel></td> <td> <p:inputText id="grupa" value="#{zanimljivaGeografijaController.grupa}"></p:inputText> </td> 
+                       
+                    </tr>
+                </table>
+                <br></br> <br></br> <br></br>
+                <p:commandButton value="Pocni" action="#{zanimljivaGeografijaController.pocni()}" update="Broj"></p:commandButton>
+             <br></br> <br></br> <br></br>
+             <p:outputLabel id="brojac">Preostalo vreme je: #{zanimljivaGeografijaController.preostalo_vreme}</p:outputLabel>
+             <p:poll interval="1" listener="#{zanimljivaGeografijaController.decrement()}" update="brojac"></p:poll>
+             <br></br> <br></br> <br></br>
+             <p:commandButton value="Potvrdi" action="#{zanimljivaGeografijaController.potvrdi(zanimljivaGeografijaController.poziv_iz_decrementa)}"></p:commandButton>
+            </h:form>
+        </div>
+    </h:body>
+</html>

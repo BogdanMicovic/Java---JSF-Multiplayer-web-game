@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Pregled rezultata</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+         <h:outputStylesheet library="css" name="dizajn.css"/>
+    </h:head>
+    <h:body>
+        <h:form id="forma_anagram" class="linkPocetna">
+            <p:panelGrid id="panel1" columns="2">
+               <p:outputLabel value="Zadati anagram1"> </p:outputLabel>
+               <p:outputLabel value="#{anagramController.zadati_anagram}"> </p:outputLabel>
+              <p:outputLabel value="Unesite resenje prvog anagrama:" for="ResenjeAnagrama"> </p:outputLabel>
+              <p:inputText id="ResenjeAnagrama" required="true" value="#{anagramController.resenje}"></p:inputText>                
+            <p:outputLabel value="Zadati anagram2"> </p:outputLabel>
+               <p:outputLabel value="#{anagramController.zadati_anagram1}"> </p:outputLabel>
+              <p:outputLabel value="Unesite resenje drugog anagrama:" for="ResenjeAnagrama1"> </p:outputLabel>
+              <p:inputText id="ResenjeAnagrama1" required="true" value="#{anagramController.resenje1}"></p:inputText>            
+            </p:panelGrid>
+            <h:commandButton value="Potvrdi" action="#{anagramController.potvrda_anagrama()}"></h:commandButton>
+             <p:outputLabel id="vreme" >Preostalo vreme je: #{anagramController.preostalo_vreme}</p:outputLabel>
+            <p:poll interval="1" listener="#{anagramController.decrement}" update="vreme"></p:poll>
+           
+      
+        </h:form>
+    </h:body>
+</html>

@@ -1,0 +1,10 @@
+Hibernate 4.3.x
+dom4j-2.1.1.jar	
+antlr4-4.7.1
+JSF 2.2
+MySQL JDBC Driver
+JDK 1.8
+GlassFish server
+http://javaluator.sourceforge.net/en/home/
+https://netbeans.org/kb/docs/web/hibernate-webapp.html
+https://netbeans.org/kb/docs/java/hibernate-java-se.html
